@@ -11,69 +11,69 @@ Simple LIMO robot autonomous drive, pothole detection and pothole counter
 [Installing LIMO simulation](https://github.com/LCAS/CMP9767_LIMO/wiki/Simulator-Setup) using native version
 
 ### Creating the ROS workspace and clone the repository
-    * Create new workspace(or use existing)
-        ```bash
-        mkdir eos2_ws
-        ```
-    * Create 'src' folder
-        ```bash    
-        cd ros2_ws
-        mkdir src
-        ```
-    * Clone the repository to src folder
-        ```bash
-        git clone https://github.com/Prabath-Ranathunga/CMP9767_Assignment.git
-        ```
+* Create new workspace(or use existing)
+```bash
+mkdir eos2_ws
+```
+* Create 'src' folder
+```bash    
+cd ros2_ws
+mkdir src
+```
+* Clone the repository to src folder
+```bash
+git clone https://github.com/Prabath-Ranathunga/CMP9767_Assignment.git
+```
 
 ### Build and Source the Packege
-    * Build the packege
-        ```bash
-        cd ~/ros2_ws
-        colcon build --symlink-install
-        ```
-    * Source the packege
-        ```bash
-        . install/setup.bash
-        ```
+* Build the packege
+```bash
+cd ~/ros2_ws
+colcon build --symlink-install
+```
+* Source the packege
+```bash
+. install/setup.bash
+```
 
 ### Start the Gaazebo Simulator
-    ```bash
-    cd limo_ros2/
-    source install/setup.bash
-    ```
+```bash
+cd limo_ros2/
+source install/setup.bash
+```
 
-    * Pothole simple world
-        ```bash
-        ros2 launch limo_gazebosim limo_gazebo_diff.launch.py world:=src/limo_gazebosim/worlds/potholes_simple.world 
-        ```
-    * Pothole(realistic) worls
-        ```bash
-        ros2 launch limo_gazebosim limo_gazebo_diff.launch.py world:=src/limo_gazebosim/worlds/potholes.world 
-        ```
+* Pothole simple world
+```bash
+ros2 launch limo_gazebosim limo_gazebo_diff.launch.py world:=src/limo_gazebosim/worlds/potholes_simple.world 
+```
+* Pothole(realistic) worls
+```bash
+ros2 launch limo_gazebosim limo_gazebo_diff.launch.py world:=src/limo_gazebosim/worlds/potholes.world 
+```
 
 ## Starting RVIZ2 graphical visualiser
-    ```bash
-    rviz2 -d src/limo_gazebosim/rviz/urdf.rviz 
-    ```
+```bash
+rviz2 -d src/limo_gazebosim/rviz/urdf.rviz 
+```
 
 ## ROS2 Commands
 
 ### ROS2 launch all nodes at once
-    ```bash
-    $ cd ../ros2_ws/CMP9767_Assignment/assignment_pathole/launch
-    ros2 launch pathole_detector.launch.py 
-    ```
+```bash
+$ cd ../ros2_ws/CMP9767_Assignment/assignment_pathole/launch
+ros2 launch pathole_detector.launch.py 
+```
 
 ### Or to Run the nodes one by one
-    ```bash
-    ros2 run assignment_pathole mover
-    ros2 run assignment_pathole pathole_detector
-    ros2 run assignment_pathole pathole_counter
-    ```
+```bash
+ros2 run assignment_pathole mover
+ros2 run assignment_pathole pathole_detector
+ros2 run assignment_pathole pathole_counter
+```
 
 ### To visualise the pothole detection in real-time,
-    * Change the color image topic to `/limo/depth_camera_link/image_detect`
-    * Add the marker with the topic of `/marker`
+* Change the color image topic to `/limo/depth_camera_link/image_detect`
+* Add the marker with the topic of `/marker`
 
 
 
