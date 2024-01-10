@@ -11,17 +11,17 @@ LIMO robot autonomous drive and pathole detection
 
 ### Source the ROS2 enviroment
 
-'''bash
+```bash
 $ source ../limo_ros2/setup.bash
-
+```
 ## Running ROS packege nodes seperatly
 To run the nodes seperatly,
-'''bash
+```bash
 ros2 run assignment_pathole <executable>
-'''
+```
 the executables are
-'''bash
+```bash
     mover
     pathole_detector
     pathole_counter
-'''
+```
