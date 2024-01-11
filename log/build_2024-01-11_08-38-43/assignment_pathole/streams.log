@@ -1,0 +1,27 @@
+[0.803s] Invoking command in '/home/cpranathunga/ros2_ws/src/CMP9767_Assignment/assignment_pathole': PYTHONPATH=/home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/prefix_override:/home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/assignment_pathole build --build-base /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build install --record /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/install.log --single-version-externally-managed
+[1.029s] running egg_info
+[1.030s] writing ../build/assignment_pathole/assignment_pathole.egg-info/PKG-INFO
+[1.030s] writing dependency_links to ../build/assignment_pathole/assignment_pathole.egg-info/dependency_links.txt
+[1.030s] writing entry points to ../build/assignment_pathole/assignment_pathole.egg-info/entry_points.txt
+[1.030s] writing requirements to ../build/assignment_pathole/assignment_pathole.egg-info/requires.txt
+[1.030s] writing top-level names to ../build/assignment_pathole/assignment_pathole.egg-info/top_level.txt
+[1.033s] reading manifest file '../build/assignment_pathole/assignment_pathole.egg-info/SOURCES.txt'
+[1.035s] writing manifest file '../build/assignment_pathole/assignment_pathole.egg-info/SOURCES.txt'
+[1.035s] running build
+[1.035s] running build_py
+[1.035s] copying assignment_pathole/pothole_detector_real.py -> /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build/lib/assignment_pathole
+[1.036s] running install
+[1.037s] running install_lib
+[1.038s] copying /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build/lib/assignment_pathole/pothole_detector_real.py -> /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole
+[1.039s] byte-compiling /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole/pothole_detector_real.py to pothole_detector_real.cpython-310.pyc
+[1.042s] running install_data
+[1.042s] running install_egg_info
+[1.044s] removing '/home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole-0.0.0-py3.10.egg-info' (and everything under it)
+[1.045s] Copying ../build/assignment_pathole/assignment_pathole.egg-info to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole-0.0.0-py3.10.egg-info
+[1.046s] running install_scripts
+[1.064s] Installing mover script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+[1.065s] Installing pothole_counter script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+[1.065s] Installing pothole_detector script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+[1.065s] Installing pothole_detector_real script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+[1.065s] writing list of installed files to '/home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/install.log'
+[1.094s] Invoked command in '/home/cpranathunga/ros2_ws/src/CMP9767_Assignment/assignment_pathole' returned '0': PYTHONPATH=/home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/prefix_override:/home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/assignment_pathole build --build-base /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build install --record /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/install.log --single-version-externally-managed

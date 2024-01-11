@@ -23,7 +23,7 @@ setup(
             "mover = assignment_pathole.mover:main",
             "pothole_detector = assignment_pathole.pothole_detector:main",
             "pothole_detector_real = assignment_pathole.pothole_detector_real:main",
-            "pothole_counter = assignment_poahole.pothole_counter:main"
+            "pothole_counter = assignment_pathole.pothole_counter:main"
         ],
     },
 )

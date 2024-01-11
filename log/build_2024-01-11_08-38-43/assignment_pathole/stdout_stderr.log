@@ -1,0 +1,25 @@
+running egg_info
+writing ../build/assignment_pathole/assignment_pathole.egg-info/PKG-INFO
+writing dependency_links to ../build/assignment_pathole/assignment_pathole.egg-info/dependency_links.txt
+writing entry points to ../build/assignment_pathole/assignment_pathole.egg-info/entry_points.txt
+writing requirements to ../build/assignment_pathole/assignment_pathole.egg-info/requires.txt
+writing top-level names to ../build/assignment_pathole/assignment_pathole.egg-info/top_level.txt
+reading manifest file '../build/assignment_pathole/assignment_pathole.egg-info/SOURCES.txt'
+writing manifest file '../build/assignment_pathole/assignment_pathole.egg-info/SOURCES.txt'
+running build
+running build_py
+copying assignment_pathole/pothole_detector_real.py -> /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build/lib/assignment_pathole
+running install
+running install_lib
+copying /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build/lib/assignment_pathole/pothole_detector_real.py -> /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole
+byte-compiling /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole/pothole_detector_real.py to pothole_detector_real.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../build/assignment_pathole/assignment_pathole.egg-info to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole-0.0.0-py3.10.egg-info
+running install_scripts
+Installing mover script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+Installing pothole_counter script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+Installing pothole_detector script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+Installing pothole_detector_real script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+writing list of installed files to '/home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/install.log'

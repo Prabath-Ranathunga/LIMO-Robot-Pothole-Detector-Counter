@@ -33,7 +33,7 @@ cascade = cv2.CascadeClassifier('cascade.xml')
 
 font = cv2.FONT_HERSHEY_SIMPLEX
 
-class PotholeDetector(Node):
+class PotholeDetectorReal(Node):
 
     object_id_counter = 0  # Class variable for persistent IDs
     camera_model = None
@@ -175,9 +175,9 @@ class PotholeDetector(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    pothole_detector = PotholeDetector()
-    rclpy.spin(pothole_detector)
-    pothole_detector.destroy_node()
+    pothole_detector_real = PotholeDetectorReal()
+    rclpy.spin(pothole_detector_real)
+    pothole_detector_real.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':
