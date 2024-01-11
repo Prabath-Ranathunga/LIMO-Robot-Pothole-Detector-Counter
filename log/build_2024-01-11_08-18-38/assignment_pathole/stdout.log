@@ -1,0 +1,47 @@
+running egg_info
+creating ../build/assignment_pathole/assignment_pathole.egg-info
+writing ../build/assignment_pathole/assignment_pathole.egg-info/PKG-INFO
+writing dependency_links to ../build/assignment_pathole/assignment_pathole.egg-info/dependency_links.txt
+writing entry points to ../build/assignment_pathole/assignment_pathole.egg-info/entry_points.txt
+writing requirements to ../build/assignment_pathole/assignment_pathole.egg-info/requires.txt
+writing top-level names to ../build/assignment_pathole/assignment_pathole.egg-info/top_level.txt
+writing manifest file '../build/assignment_pathole/assignment_pathole.egg-info/SOURCES.txt'
+reading manifest file '../build/assignment_pathole/assignment_pathole.egg-info/SOURCES.txt'
+writing manifest file '../build/assignment_pathole/assignment_pathole.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build
+creating /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build/lib
+creating /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build/lib/assignment_pathole
+copying assignment_pathole/pothole_detector.py -> /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build/lib/assignment_pathole
+copying assignment_pathole/__init__.py -> /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build/lib/assignment_pathole
+copying assignment_pathole/pothole_detector_real.py -> /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build/lib/assignment_pathole
+copying assignment_pathole/mover.py -> /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build/lib/assignment_pathole
+copying assignment_pathole/pothole_counter.py -> /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build/lib/assignment_pathole
+running install
+running install_lib
+creating /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole
+copying /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build/lib/assignment_pathole/pothole_detector.py -> /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole
+copying /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build/lib/assignment_pathole/__init__.py -> /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole
+copying /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build/lib/assignment_pathole/pothole_detector_real.py -> /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole
+copying /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build/lib/assignment_pathole/mover.py -> /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole
+copying /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build/lib/assignment_pathole/pothole_counter.py -> /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole
+byte-compiling /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole/pothole_detector.py to pothole_detector.cpython-310.pyc
+byte-compiling /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole/pothole_detector_real.py to pothole_detector_real.cpython-310.pyc
+byte-compiling /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole/mover.py to mover.cpython-310.pyc
+byte-compiling /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole/pothole_counter.py to pothole_counter.cpython-310.pyc
+running install_data
+creating /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/share/ament_index
+creating /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/share/ament_index/resource_index
+creating /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/share/ament_index/resource_index/packages
+copying resource/assignment_pathole -> /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/share/ament_index/resource_index/packages
+copying package.xml -> /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/share/assignment_pathole
+running install_egg_info
+Copying ../build/assignment_pathole/assignment_pathole.egg-info to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment_pathole-0.0.0-py3.10.egg-info
+running install_scripts
+Installing mover script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+Installing pothole_counter script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+Installing pothole_detector script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+Installing pothole_detector_real script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+writing list of installed files to '/home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/install.log'
