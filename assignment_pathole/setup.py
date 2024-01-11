@@ -21,8 +21,9 @@ setup(
     entry_points={
         'console_scripts': [
             "mover = assignment_pathole.mover:main",
-            "pathole_detector = assignment_pathole.pathole_detector:main",
-            "pathole_counter = assignment_pathole.pathole_counter:main"
+            "pothole_detector = assignment_pathole.pothole_detector:main",
+            "pothole_detector_real = assignment_pathole.pothole_detector:main",
+            "pothole_counter = assignment_poahole.pothole_counter:main"
         ],
     },
 )

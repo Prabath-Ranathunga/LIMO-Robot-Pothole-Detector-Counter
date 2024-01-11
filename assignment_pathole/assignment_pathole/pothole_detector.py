@@ -1,8 +1,8 @@
 """
-Detect the patholes using color segmentation
+Detect the pothole using color segmentation
 Calculate distance and coordinates relative to camera
 Get the robot camera coordination from the TF
-Calculate the x and y coordinates of each patholes relative to odom frame
+Calculate the x and y coordinates of each pothole relative to odom frame
 Use marker to publish detected coordinates
 """
 # Python libs
@@ -30,7 +30,7 @@ from tf_transformations import euler_from_quaternion
 
 font = cv2.FONT_HERSHEY_SIMPLEX
 
-class PatholeDetector(Node):
+class PotholeDetector(Node):
 
     object_id_counter = 0  # Class variable for persistent IDs
     camera_model = None
@@ -39,14 +39,14 @@ class PatholeDetector(Node):
     color2depth_aspect = 1.0  
 
     def __init__(self):    
-        super().__init__('pathole_detector')
+        super().__init__('pothole_detector')
         self.bridge = CvBridge()
 
         self.camera_info_sub = self.create_subscription(CameraInfo, '/limo/depth_camera_link/camera_info', self.camera_info_callback, qos_profile=qos.qos_profile_sensor_data)
         self.image_sub = self.create_subscription(Image, '/limo/depth_camera_link/image_raw', self.image_color_callback, qos_profile=qos.qos_profile_sensor_data)
         self.image_sub = self.create_subscription(Image, '/limo/depth_camera_link/depth/image_raw', self.image_depth_callback, qos_profile=qos.qos_profile_sensor_data)
-        self.image_pub = self.create_publisher(Image, '/limo/depth_camera_link/image_detect', 10)   # Create a publisher to publish pathole marked image
-        self.marker_pub = self.create_publisher(Marker, '/marker', 1)                               # Create a Marker publisher to publish detected pathole coordinates
+        self.image_pub = self.create_publisher(Image, '/limo/depth_camera_link/image_detect', 10)   # Create a publisher to publish pothole marked image
+        self.marker_pub = self.create_publisher(Marker, '/marker', 1)                               # Create a Marker publisher to publish detected pothole coordinates
 
         self.tf_buffer = Buffer()
         self.tf_listener = TransformListener(self.tf_buffer, self)
@@ -101,22 +101,22 @@ class PatholeDetector(Node):
                 # Get the contor area and only check that contor area bigger than 300
                 contour_area = cv2.contourArea(contour)
                 if 300 < contour_area:
-                    # Get the centroids for detected patholes
+                    # Get the centroids for detected pothole
                     M = cv2.moments(contour)
                     if M["m00"] == 0:
                         return
                     image_coords = (M["m01"] / M["m00"], M["m10"] / M["m00"])
 
-                    # Draw a line arout detected pathole to visualise
+                    # Draw a line arout detected pothole to visualise
                     cv2.drawContours(image_color, [contour], -1, (0, 255, 0), 2)
 
                     # Map from color image to depth image
                     depth_coords = (image_depth.shape[0]/2 + (image_coords[0] - image_color.shape[0]/2)*self.color2depth_aspect, image_depth.shape[1]/2 + (image_coords[1] - image_color.shape[1]/2)*self.color2depth_aspect)
                     
-                    # Get the depth reading at the pathole's centroid locations
+                    # Get the depth reading at the pothole's centroid locations
                     depth_value = image_depth[int(depth_coords[0]), int(depth_coords[1])] 
 
-                    # Calculate pathole's's 3d location in camera coords
+                    # Calculate pothole's's 3d location in camera coords
                     camera_coords = self.camera_model.projectPixelTo3dRay((image_coords[1], image_coords[0]))   # Project the image coords (x,y) into 3D ray in camera coords
                     camera_coords = [x/camera_coords[2] for x in camera_coords]                                 # Adjust the resulting vector so that z = 1
                     camera_coords = [x*depth_value for x in camera_coords]                                      # Multiply the vector by depth
@@ -149,7 +149,7 @@ class PatholeDetector(Node):
 
                     # print('Coords : ', x_coords, y_coords)
 
-                    # Publish detected points of patholes using Marker
+                    # Publish detected points of pothole using Marker
                     marker = Marker()
                     marker.header.frame_id = 'odom'  
                     marker.id = self.point_id
@@ -173,8 +173,6 @@ class PatholeDetector(Node):
 
         search_contours(image_mask)
 
-        #cv2.imshow("image color", image_color)
-
         # Pulish image with contors
         image_detect = self.bridge.cv2_to_imgmsg(image_color, "bgr8")
         self.image_pub.publish(image_detect)
@@ -182,9 +180,9 @@ class PatholeDetector(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    pathole_detector = PatholeDetector()
-    rclpy.spin(pathole_detector)
-    pathole_detector.destroy_node()
+    pothole_detector = PotholeDetector()
+    rclpy.spin(pothole_detector)
+    pothole_detector.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':

@@ -67,8 +67,8 @@ ros2 launch pathole_detector.launch.py
 ### Or to Run the nodes one by one
 ```bash
 ros2 run assignment_pathole mover
-ros2 run assignment_pathole pathole_detector
-ros2 run assignment_pathole pathole_counter
+ros2 run assignment_pathole pothole_detector
+ros2 run assignment_pathole pothole_counter
 ```
 
 ### To visualise the pothole detection in real-time,
@@ -87,4 +87,4 @@ Using subscribtion to color camera, depth camera, camera info to detect and get 
 Get the robot depth_link position and orientation data from the TF tree relative to the odeom frame since it's a fixed frame. Then using `euler_from_quaternion` calculate the yaw value of the depth_link frame. With that and using some calculations calculate the each detected pothole coordinates (only x and y). Then publish it using `Marker` for visualization in rviz and to calculate the total number of potholes.
 
 ### Pothole counter
-Get the each pathole coordinates by subcribing to `Marker` topic and then calculating total number of potholes. Since it detect same pothole again and again and there are some coordinate of the centroid changes when it  detect from different angle, It uses a threshold value to detect whether it's same pothole or not. If it's same pathole it only keep one coordinate and ignore other coordinates. If not it saves coordinates in to array and the log how many coordinates in the array. And it output each pothole coordinates.
+Get the each pothole coordinates by subcribing to `Marker` topic and then calculating total number of potholes. Since it detect same pothole again and again and there are some coordinate of the centroid changes when it  detect from different angle, It uses a threshold value to detect whether it's same pothole or not. If it's same pothole it only keep one coordinate and ignore other coordinates. If not it saves coordinates in to array and the log how many coordinates in the array. And it output each pothole coordinates.

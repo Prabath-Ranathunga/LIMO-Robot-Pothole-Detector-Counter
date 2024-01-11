@@ -1,10 +1,10 @@
 """
-Detected pathole counter
-Get the x and y coordinates of the detected patholes by suscribing to marker topic
+Detected pothole counter
+Get the x and y coordinates of the detected pothole by suscribing to marker topic
 Save each coordinates and check whether it's in other coordinates threshold range
 Keep only that not the each ones range
 Count the pathole coordinate sets
-Give x and y coordinates for each pathole
+Give x and y coordinates for each pothole
 """
 # Python libs
 import rclpy
@@ -16,18 +16,18 @@ from visualization_msgs.msg import Marker
 # Numpy
 import numpy as np
 
-class PatholeCounter(Node):
+class PotholeCounter(Node):
     def __init__(self):
-        super().__init__('pathole_counter')
+        super().__init__('pothole_counter')
         # Create a subscriber to Marker to get object's coordinates
         self.subscription = self.create_subscription(Marker, '/marker', self.marker_callback, 10)
 
         self.coordinates = []
-        # Setup threshold value to avoid repeat counting the same pathole again
+        # Setup threshold value to avoid repeat counting the same pothole again
         self.threshold = 0.095
 
     def marker_callback(self, msg):
-        # The x and y coordinates from the marker message that published from pathole_detection 
+        # The x and y coordinates from the marker message that published from pothole_detection 
         x = msg.pose.position.x
         y = msg.pose.position.y
         
@@ -39,7 +39,7 @@ class PatholeCounter(Node):
         self.coordinates.append((x, y))
         
         # Log the count of x and y sets in the array
-        self.get_logger().info(f"Pathole Count : {len(self.coordinates)}")
+        self.get_logger().info(f"Pothole Count : {len(self.coordinates)}")
 
     def is_within_threshold(self, x, y):
         for coord in self.coordinates:
@@ -52,13 +52,13 @@ class PatholeCounter(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    pathole_counter = PatholeCounter()
+    pothole_counter = PotholeCounter()
     try: 
-        rclpy.spin(pathole_counter)
+        rclpy.spin(pothole_counter)
     except KeyboardInterrupt:
         # Print the array of coordinates
-        print("Pathole coordinates:", pathole_counter.coordinates)
-    pathole_counter.destroy_node()
+        print("Pothole coordinates:", pothole_counter.coordinates)
+    pothole_counter.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':

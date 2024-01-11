@@ -10,12 +10,12 @@ def generate_launch_description():
         ),
         Node(
             package = "assignment_pathole",
-            executable = "pathole_detector",
+            executable = "pothole_detector",
             name = 'detector_node'
         ),
         Node(
             package = "assignment_pathole",
-            executable = "pathole_counter",
+            executable = "pothole_counter",
             name = 'counter_node',
             output = 'log'
         )

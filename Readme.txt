@@ -1,4 +1,4 @@
-LIMO Robot Pathole Detector/Counter
+LIMO Robot pothole Detector/Counter
 
 
 Installing ROS2 Humble desktop
@@ -42,8 +42,8 @@ ROS2 launch all nodes at once
 
 Or to Run the nodes one by one,
     ros2 run assignment_pathole mover
-    ros2 run assignment_pathole pathole_detector
-    ros2 run assignment_pathole pathole_counter
+    ros2 run assignment_pathole pothole_detector
+    ros2 run assignment_pathole pothole_counter
 
 To visualise the pothole detection in real-time,
     1. Change the color image topic to '/limo/depth_camera_link/image_detect'
@@ -64,5 +64,5 @@ Summary
     calculate the each detected pothole coordinates (only x and y). Then publish it using Marker for visualization in rviz and to calculate the total number of potholes.
 
 3. Pothole counter
-    Get the each pathole coordinates by subcribing to Marker topic and then calculating total number of potholes. Since it detect same pothole again and again and there are some coordinate of the centroid changes when it  detect from different angle, 
-    It uses a threshold value to detect whether it's same pothole or not. If it's same pathole it only keep one coordinate and ignore other coordinates. If not it saves coordinates in to array and the log how many coordinates in the array. And it output each pothole coordinates.
+    Get the each pothole coordinates by subcribing to Marker topic and then calculating total number of potholes. Since it detect same pothole again and again and there are some coordinate of the centroid changes when it  detect from different angle, 
+    It uses a threshold value to detect whether it's same pothole or not. If it's same pothole it only keep one coordinate and ignore other coordinates. If not it saves coordinates in to array and the log how many coordinates in the array. And it output each pothole coordinates.
