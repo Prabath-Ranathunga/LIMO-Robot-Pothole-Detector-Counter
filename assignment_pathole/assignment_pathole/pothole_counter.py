@@ -40,6 +40,8 @@ class PotholeCounter(Node):
         
         # Log the count of x and y sets in the array
         self.get_logger().info(f"Pothole Count : {len(self.coordinates)}")
+        # Log the newly added coordinates
+        self.get_logger().info(f"New Pothole Coordinates : {x, y}")
 
     def is_within_threshold(self, x, y):
         for coord in self.coordinates:
@@ -56,8 +58,13 @@ def main(args=None):
     try: 
         rclpy.spin(pothole_counter)
     except KeyboardInterrupt:
-        # Print the array of coordinates
-        print("Pothole coordinates:", pothole_counter.coordinates)
+        # Save pothole coordinates to text file
+        filename = "Pothole_Coordinates.txt"
+        with open(filename, 'w') as file:
+            for count, (x, y) in enumerate(pothole_counter.coordinates, start=1):
+                file.write(f"Pothole {count} : ({x} {y})\n")
+        print(f"Coordinates saved to {filename}")
+
     pothole_counter.destroy_node()
     rclpy.shutdown()
 

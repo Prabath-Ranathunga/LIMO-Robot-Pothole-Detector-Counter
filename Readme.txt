@@ -22,6 +22,15 @@ Build and Source the Packege
     2. Source the packege
         . install/setup.bash
 
+Dependancies and Libraries that used 
+    1. Libraries used
+        opencv-python
+        numpy
+        math
+    2. Dependancies that used
+        rclpy
+        CvBridge
+
 Start the Gaazebo Simulator
     cd limo_ros2/
     source install/setup.bash
@@ -43,6 +52,7 @@ ROS2 launch all nodes at once
 Or to Run the nodes one by one,
     ros2 run assignment_pathole mover
     ros2 run assignment_pathole pothole_detector
+    ros2 run assignment_pathole pothole_detector_real
     ros2 run assignment_pathole pothole_counter
 
 To visualise the pothole detection in real-time,
@@ -58,11 +68,11 @@ Summary
 2. Detecting potholes
     Using subscribtion to color camera, depth camera, camera info to detect and get the pothole locations respect to the depth-link. First method is to use color
     segmentation (using upper and lower hsv color range) to detect potholes in the simple world and second method is to trained haar cascade model to detect potholes i the reallistic map. Then define a minimum detection
-    area and get centroid of that pothole and use that to map out it from depth frame and get distance value to each potholes.
+    area and get centroid of that pothole and use that to map out it from depth frame and get distance value to each potholes. Also calculate the approximate value of pothole area in cm^2 in certain distance range. 
     Using projectPixelTo3dRay get the actual coordinates of each detected pothole locations respect to the depth_link frame.
     Get the robot depth_link position and orientation data from the TF tree relative to the odeom frame since it's a fixed frame. Then using 'euler_from_quaternion' calculate the yaw value of the depth_link frame. With that and using some calculations 
     calculate the each detected pothole coordinates (only x and y). Then publish it using Marker for visualization in rviz and to calculate the total number of potholes.
 
 3. Pothole counter
     Get the each pothole coordinates by subcribing to Marker topic and then calculating total number of potholes. Since it detect same pothole again and again and there are some coordinate of the centroid changes when it  detect from different angle, 
-    It uses a threshold value to detect whether it's same pothole or not. If it's same pothole it only keep one coordinate and ignore other coordinates. If not it saves coordinates in to array and the log how many coordinates in the array. And it output each pothole coordinates.
+    It uses a threshold value to detect whether it's same pothole or not. If it's same pothole it only keep one coordinate and ignore other coordinates. If not it saves coordinates in to array and the log how many coordinates in the array. And it output each pothole coordinates once it added. And create text file with list of coordinates at the end.

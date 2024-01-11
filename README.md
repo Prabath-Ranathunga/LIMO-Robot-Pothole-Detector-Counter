@@ -35,6 +35,18 @@ colcon build --symlink-install
 ```bash
 . install/setup.bash
 ```
+## Dependancies and Libraries that used 
+* Libraries used
+```bash
+opencv-python
+numpy
+math
+```
+* Dependancies that used
+```bash
+rclpy
+CvBridge
+```
 
 ### Start the Gaazebo Simulator
 ```bash
@@ -68,6 +80,7 @@ ros2 launch pathole_detector.launch.py
 ```bash
 ros2 run assignment_pathole mover
 ros2 run assignment_pathole pothole_detector
+ros2 run assignment_pathole pothole_detector_real
 ros2 run assignment_pathole pothole_counter
 ```
 
@@ -83,8 +96,8 @@ ros2 run assignment_pathole pothole_counter
 Using `Laserscan` subscriber to get lidar data to detect objects infront of the bobot and uses `Twist` to send robot movement commands. And it only uses 60 degree of detection range from the front and 0.5m obstacle detection distance. if robot detect obstacle it turns and if not it continue to move forward.
 
 ### Detecting potholes
-Using subscribtion to color camera, depth camera, camera info to detect and get the pothole locations respect to the depth-link. First method is to use color segmentation (using upper and lower hsv color range) to detect potholes in the simple world and second method is to trained haar cascade model to detect potholes i the realistic map. Then define a minimum detection area and get centroid of that pothole and use that to map out it from depth frame and get distance value to each potholes. Using `projectPixelTo3dRay` get the actual coordinates of each detected pothole locations respect to the depth_link frame.
+Using subscribtion to color camera, depth camera, camera info to detect and get the pothole locations respect to the depth-link. First method is to use color segmentation (using upper and lower hsv color range) to detect potholes in the simple world and second method is to trained haar cascade model to detect potholes in the realistic map. Then define a minimum detection area and get centroid of that pothole and use that to map out it from depth frame and get distance value to each potholes. Using `projectPixelTo3dRay` get the actual coordinates of each detected pothole locations respect to the depth_link frame. Also calculate the approximate value of pothole area in cm^2 in certain distance range. 
 Get the robot depth_link position and orientation data from the TF tree relative to the odeom frame since it's a fixed frame. Then using `euler_from_quaternion` calculate the yaw value of the depth_link frame. With that and using some calculations calculate the each detected pothole coordinates (only x and y). Then publish it using `Marker` for visualization in rviz and to calculate the total number of potholes.
 
 ### Pothole counter
-Get the each pothole coordinates by subcribing to `Marker` topic and then calculating total number of potholes. Since it detect same pothole again and again and there are some coordinate of the centroid changes when it  detect from different angle, It uses a threshold value to detect whether it's same pothole or not. If it's same pothole it only keep one coordinate and ignore other coordinates. If not it saves coordinates in to array and the log how many coordinates in the array. And it output each pothole coordinates.
+Get the each pothole coordinates by subcribing to `Marker` topic and then calculating total number of potholes. Since it detect same pothole again and again and there are some coordinate of the centroid changes when it  detect from different angle, It uses a threshold value to detect whether it's same pothole or not. If it's same pothole it only keep one coordinate and ignore other coordinates. If not it saves coordinates in to array and the log how many coordinates in the array. And it output each pothole coordinates once it added. And create text file with list of coordinates at the end.

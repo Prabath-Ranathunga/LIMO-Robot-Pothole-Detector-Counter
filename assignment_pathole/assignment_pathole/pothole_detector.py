@@ -106,6 +106,8 @@ class PotholeDetector(Node):
                     if M["m00"] == 0:
                         return
                     image_coords = (M["m01"] / M["m00"], M["m10"] / M["m00"])
+                    cx = int(M["m10"] / M["m00"])
+                    cy = int(M["m01"] / M["m00"])
 
                     # Draw a line arout detected pothole to visualise
                     cv2.drawContours(image_color, [contour], -1, (0, 255, 0), 2)
@@ -115,6 +117,13 @@ class PotholeDetector(Node):
                     
                     # Get the depth reading at the pothole's centroid locations
                     depth_value = image_depth[int(depth_coords[0]), int(depth_coords[1])] 
+
+                    # Calculate the approximate area value (cm^2) of potholes in pre defined distance
+                    if 0.3 <= depth_value <= 0.5:
+                        area = contour_area / 137.838 # Devide the area by pre calculated scale factor
+                        cv2.putText(image_color, f"{round(area, 2)} cm^2", (cx, cy), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+                    else:
+                        return
 
                     # Calculate pothole's's 3d location in camera coords
                     camera_coords = self.camera_model.projectPixelTo3dRay((image_coords[1], image_coords[0]))   # Project the image coords (x,y) into 3D ray in camera coords
