@@ -1,0 +1,20 @@
+[0.679s] Invoking command in '/home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole': PYTHONPATH=/home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/prefix_override:/home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build --no-deps install_data
+[0.907s] running develop
+[1.065s] running egg_info
+[1.065s] writing assignment_pathole.egg-info/PKG-INFO
+[1.065s] writing dependency_links to assignment_pathole.egg-info/dependency_links.txt
+[1.065s] writing entry points to assignment_pathole.egg-info/entry_points.txt
+[1.065s] writing requirements to assignment_pathole.egg-info/requires.txt
+[1.066s] writing top-level names to assignment_pathole.egg-info/top_level.txt
+[1.067s] reading manifest file 'assignment_pathole.egg-info/SOURCES.txt'
+[1.073s] writing manifest file 'assignment_pathole.egg-info/SOURCES.txt'
+[1.075s] running build_ext
+[1.075s] Creating /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment-pathole.egg-link (link to .)
+[1.076s] Installing mover script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+[1.076s] Installing pothole_counter script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+[1.076s] Installing pothole_detector script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+[1.076s] Installing pothole_detector_real script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+[1.076s] 
+[1.076s] Installed /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole
+[1.077s] running install_data
+[1.106s] Invoked command in '/home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole' returned '0': PYTHONPATH=/home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/prefix_override:/home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole/build --no-deps install_data

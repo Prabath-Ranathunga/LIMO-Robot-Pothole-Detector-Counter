@@ -1,0 +1,18 @@
+running develop
+running egg_info
+writing assignment_pathole.egg-info/PKG-INFO
+writing dependency_links to assignment_pathole.egg-info/dependency_links.txt
+writing entry points to assignment_pathole.egg-info/entry_points.txt
+writing requirements to assignment_pathole.egg-info/requires.txt
+writing top-level names to assignment_pathole.egg-info/top_level.txt
+reading manifest file 'assignment_pathole.egg-info/SOURCES.txt'
+writing manifest file 'assignment_pathole.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/python3.10/site-packages/assignment-pathole.egg-link (link to .)
+Installing mover script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+Installing pothole_counter script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+Installing pothole_detector script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+Installing pothole_detector_real script to /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/install/assignment_pathole/lib/assignment_pathole
+
+Installed /home/cpranathunga/ros2_ws/src/CMP9767_Assignment/build/assignment_pathole
+running install_data

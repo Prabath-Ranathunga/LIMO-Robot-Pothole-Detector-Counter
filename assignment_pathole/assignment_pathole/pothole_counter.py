@@ -24,7 +24,7 @@ class PotholeCounter(Node):
 
         self.coordinates = []
         # Setup threshold value to avoid repeat counting the same pothole again
-        self.threshold = 0.095
+        self.threshold = 0.08
 
     def marker_callback(self, msg):
         # The x and y coordinates from the marker message that published from pothole_detection 
